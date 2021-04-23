@@ -2,6 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const addUser = () => {
+    fetch('http://nginx-gateway:4000/api/user', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods': 'POST'
+      }
+    })
+      .then(response => {
+        console.log("call back api success")
+      })
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +32,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={addUser}>ADD USER</button>
     </div>
   );
 }
