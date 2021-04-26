@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const addUser = () => {
-    fetch('http://nginx-gateway:4000/api/user', {
+    fetch('http://localhost:4000/api/user', {
       method: 'POST',
       mode: 'cors',
       headers: {
